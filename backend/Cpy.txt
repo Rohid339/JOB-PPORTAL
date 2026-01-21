@@ -1,0 +1,11 @@
+mongodb+srv://dadda2:%40Dadda2@codingadda.talrlob.mongodb.net/
+
+
+register:
+{
+    "fullname":"Sk Abdur Rohid",
+    "email":"rohid@gamil.com",
+    "phoneNumber":9879879870,
+    "password":"rohid123",
+    "role":"student"
+}
