@@ -9,3 +9,30 @@ register:
     "password":"rohid123",
     "role":"student"
 }
+
+{
+  "companyName": "Google"
+}
+
+{
+  "name": "Google India",
+  "description": "Leading tech company",
+  "website": "https://skhub.com",
+  "location": "Bangalore"
+}
+
+
+
+{
+  "title": "Backend Developer",
+  "description": "Node.js backend developer required",
+  "requirements": "Node.js,Express,MongoDB",
+  "salary": 60000,
+  "location": "Bangalore",
+  "jobType": "Full-time",
+  "experience": 2,
+  "position": 3,
+  "companyId": "65a9f1a3c12b9c1a9e123456"
+}
+
+
