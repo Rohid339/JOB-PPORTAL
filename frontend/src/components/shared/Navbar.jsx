@@ -1,11 +1,11 @@
 import React from 'react'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 import { Button } from '../ui/button'
-import { Avatar, AvatarImage } from '../ui/avatar'
+import { Avatar, AvatarImage,AvatarFallback } from '../ui/avatar'
 import { LogOut, User2 } from 'lucide-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-
+import { FaUserAstronaut } from "react-icons/fa";
 import axios from 'axios'
 import { USER_API_END_POINT } from '@/utils/constant'
 import { setUser } from '@/redux/authSlice'
@@ -13,6 +13,7 @@ import { toast } from 'sonner'
 
 const Navbar = () => {
     const { user } = useSelector(store => store.auth);
+    console.log(user)
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -64,14 +65,30 @@ const Navbar = () => {
                             <Popover>
                                 <PopoverTrigger asChild>
                                     <Avatar className="cursor-pointer">
-                                        <AvatarImage src={user?.profile?.profilePhoto} alt="@shadcn" />
+                                        {
+                                                    user?.profile?.profilePhoto ? (
+                                                        <AvatarImage src={user?.profile?.profilePhoto} alt="user" />
+                                                    ) : (
+                                                        <AvatarFallback>
+                                                            <FaUserAstronaut size={16} />
+                                                        </AvatarFallback>
+                                                    )
+                                                }  
                                     </Avatar>
                                 </PopoverTrigger>
                                 <PopoverContent className="w-80">
                                     <div className=''>
                                         <div className='flex gap-2 space-y-2'>
                                             <Avatar className="cursor-pointer">
-                                                <AvatarImage src={user?.profile?.profilePhoto} alt="@shadcn" />
+                                                {
+                                                    user?.profile?.profilePhoto ? (
+                                                        <AvatarImage src={user?.profile?.profilePhoto} alt="user" />
+                                                    ) : (
+                                                        <AvatarFallback>
+                                                            <FaUserAstronaut size={16} />
+                                                        </AvatarFallback>
+                                                    )
+                                                }    
                                             </Avatar>
                                             <div>
                                                 <h4 className='font-medium'>{user?.fullname}</h4>

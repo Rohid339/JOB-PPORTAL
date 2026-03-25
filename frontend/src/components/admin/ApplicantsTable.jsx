@@ -58,7 +58,7 @@ const ApplicantsTable = () => {
                                         <PopoverTrigger>
                                             <MoreHorizontal />
                                         </PopoverTrigger>
-                                        <PopoverContent className="w-32">
+                                        <PopoverContent className="w-32 ">
                                             {
                                                 shortlistingStatus.map((status, index) => {
                                                     return (

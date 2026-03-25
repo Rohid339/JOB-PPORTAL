@@ -23,7 +23,8 @@ const PostJob = () => {
     jobType:"",
     experience:"",
     position:0,
-    companyId:""
+    companyId:undefined
+
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -64,7 +65,7 @@ const PostJob = () => {
     <div>
       <Navbar/>
       <div className='flex items-center justify-center w-screen my-5'>
-        <form onSubmit={submitHandler} className='p-8 max-w-4xl border border-gray-200 shadow-lg rounded-md'>
+        <form onSubmit={submitHandler} className='p-10 max-w-5xl w-full bg-white border border-gray-200 dark:border-gray-700 shadow-xl rounded-2xl space-y-6'>
             <div className='grid grid-cols-2 gap-2'>
                 <div>
                   <Label>Title</Label>
@@ -97,7 +98,7 @@ const PostJob = () => {
                   />
                 </div>
                 <div>
-                  <Label>Salary</Label>
+                  <Label>Salary </Label>
                   <Input
                     type='text'
                     name = 'salary'
@@ -149,8 +150,8 @@ const PostJob = () => {
                 {
                     companies.length > 0 && (
                       <Select onValueChange={selectChangeHandler}>
-                        <SelectTrigger className='[w-180px]'>
-                            <SelectValue placeholder='Select a Company'/>
+                        <SelectTrigger className='[w-180px] '>
+                            <SelectValue  placeholder='Select a Company'/>
                         </SelectTrigger>
                         <SelectContent>
                           <SelectGroup>
@@ -158,6 +159,7 @@ const PostJob = () => {
                               companies.map((company)=>{
                                 return(
                                   <SelectItem 
+                                  className="cursor-pointer rounded-md px-3 py-2 text-sm hover:bg-gray-100 focus:bg-gray-100"
                                   key={company._id}
                                   value={company?.name?.toLowerCase()}>{company.name}</SelectItem>
                                 )

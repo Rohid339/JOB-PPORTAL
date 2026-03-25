@@ -73,7 +73,7 @@ const Signup = () => {
             <form onSubmit={submitHandler} className='w-1/2 border border-gray-200 rounded-md p-4 my-10'>
                 <h1 className='font-bold text-xl mb-5'>Sign Up</h1>
                 <div className='flex flex-col gap-2 my-2.5'>
-                    <Label >Full Name</Label>
+                    <Label htmlFor='fullname' >Full Name</Label>
                     <Input type="text"
                         value={input.fullname}
                         name='fullname'
@@ -83,7 +83,7 @@ const Signup = () => {
                 </div>
                 
                 <div className='flex flex-col gap-2 my-2.5'>
-                    <Label >Email</Label>
+                    <Label htmlFor='email' >Email</Label>
                     <Input type="email"
                         value={input.email}
                         name='email'
@@ -92,7 +92,7 @@ const Signup = () => {
                     />
                 </div>
                 <div className= ' flex flex-col gap-2  my-2.5'>
-                   <Label>Phone Number</Label>
+                   <Label htmlFor='phoneNumber'>Phone Number</Label>
                    <Input
                        type="text"
                        value={input.phoneNumber}
@@ -102,7 +102,7 @@ const Signup = () => {
                     />
                 </div>
                 <div className='flex flex-col gap-2 my-2.5'>
-                    <Label>Password</Label>
+                    <Label htmlFor='password'>Password</Label>
                     <Input type="password"
                         value={input.password}
                         name='password'
@@ -133,7 +133,7 @@ const Signup = () => {
                         </div>
                     </RadioGroup>
                     <div className='flex items-center gap-2'>
-                        <Label>Profile</Label>
+                        <Label htmlFor='file'>Profile</Label>
                         <Input type="file"
                             accept='image/*'
                             onChange={fileHandler}
