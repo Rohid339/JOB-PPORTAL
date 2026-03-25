@@ -113,7 +113,8 @@ export const login = async(req,res)=>{
             maxAge: 1 * 24 * 60 * 60 * 1000,
             httpOnly: true,
             secure: true,        // ✅ MUST for HTTPS (Render)
-            sameSite: "none"     // ✅ MUST for cross-origin
+            sameSite: "none",    // ✅ MUST for cross-origin
+            path:"/"
         })
         .json({
             message: `Welcome back ${user.fullname}`,
